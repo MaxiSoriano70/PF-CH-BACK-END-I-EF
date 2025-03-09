@@ -1,0 +1,26 @@
+/*PALETTA DE COLORES*/
+:root {
+    --color-01: #A60505;
+    --color-02: #d40101;
+    --color-03: #0c1446;
+    --color-04:#192d96;
+    --color-05: #144d4d;
+    --color-06: #125959;
+    --color-fondo: #E7E1E1;
+    --color-blanco: #fff;
+    --color-negro: #000;
+}
+
+.bg-color-principal {
+    background-color: var(--color-03);
+}
+
+.btn-footer-logo{
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+.btn-footer-logo:hover{
+    color: white;
+}

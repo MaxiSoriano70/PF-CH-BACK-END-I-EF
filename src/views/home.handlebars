@@ -1,0 +1,35 @@
+<section class="d-flex flex-column align-items-center justify-content-center p-2">
+    <h2>Lista de productos</h2>
+    <section class="d-flex align-items-stretch justify-content-around flex-wrap">
+        {{#each productos}}
+        <div class="card m-2 d-flex flex-column" style="width: 18rem; min-height: 400px;" id="producto{{this.id}}">
+            <img src="{{this.urlImagen}}" class="card-img-top" alt="Imagen del producto" style="height: 200px; object-fit: cover;">
+            <div class="card-body d-flex flex-column" style="flex-grow: 1;">
+                <h5 class="card-title">{{this.titulo}}</h5>
+                <p class="card-text">
+                    {{this.descripcion}}
+                </p>
+                <p><span>Precio:</span> {{this.precio}}</p>
+                <a href="/producto/{{this.id}}" class="btn btn-primary mt-auto">Ver más</a>
+            </div>
+        </div>
+        {{/each}}
+    </section>
+
+    <!-- Paginación -->
+    <div class="d-flex justify-content-center align-items-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <!-- Previous Page Link -->
+                <li class="page-item {{#if prevPage}}{{else}}disabled{{/if}}">
+                    <a class="page-link" href="?page={{prevPage}}">Anterior</a>
+                </li>
+
+                <!-- Next Page Link -->
+                <li class="page-item {{#if nextPage}}{{else}}disabled{{/if}}">
+                    <a class="page-link" href="?page={{nextPage}}">Siguiente</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>

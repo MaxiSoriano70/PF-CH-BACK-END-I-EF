@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "titulo": "Teclado Aula F99",
+    "descripcion": "Teclado Aula F99 con 3 switch de repuestos, usb tipo C y pinza para switch",
+    "precio": 1500,
+    "codigo": "TECLAULA99",
+    "stock": 10,
+    "estado": true,
+    "categoria": "Perifericos",
+    "urlImagen": "https://m.media-amazon.com/images/I/81jo244nqWL._SS1000_.jpg"
+  },
+  {
+    "id": 2,
+    "titulo": "Teclado Aula F75",
+    "descripcion": "Teclado Aula F75 con 3 switch de repuestos, usb tipo C y pinza para switch",
+    "precio": 1000,
+    "estado": true,
+    "categoria": "Perifericos",
+    "codigo": "TECLAULA75",
+    "stock": 20,
+    "urlImagen": "https://www.mmstoreperu.com/cdn/shop/files/TECLADO-AULA-F75-EPOMAKER-3_700x.jpg"
+  },
+  {
+    "id": 3,
+    "titulo": "Teclado Aula F99 Black",
+    "descripcion": "Teclado Aula F99 Black con 3 switch de repuestos, usb tipo C y pinza para switch",
+    "precio": 1600,
+    "codigo": "TECLAULA99BLACK",
+    "stock": 10,
+    "estado": true,
+    "categoria": "Perifericos",
+    "urlImagen": "https://m.media-amazon.com/images/I/81jo244nqWL._SS1000_.jpg"
+  },
+  {
+    "id": 4,
+    "titulo": "Remera asroma",
+    "descripcion": "Remera asroma local dorsal 16",
+    "precio": 100,
+    "codigo": "REASROMA",
+    "stock": 20,
+    "estado": true,
+    "categoria": "ropa deportiva",
+    "urlImagen": "https://kickoffshopper.com/wp-content/uploads/2024/07/AS-Roma-Home-PAREDES-16-Jersey-24-25.png"
+  },
+  {
+    "id": 6,
+    "titulo": "Camiseta Totti",
+    "descripcion": "Camiseta de Franchesco Totti 10",
+    "precio": 150,
+    "codigo": "ROMAT10",
+    "stock": 100,
+    "estado": true,
+    "categoria": "ropa deportiva",
+    "urlImagen": "https://http2.mlstatic.com/D_NQ_NP_2X_773129-MLA53306401931_012023-F.webp"
+  },
+  {
+    "id": 7,
+    "titulo": "Romulo",
+    "descripcion": "Peluche de romulo",
+    "precio": 75,
+    "codigo": "ROMOPELU",
+    "stock": 100,
+    "estado": true,
+    "categoria": "juguetes",
+    "urlImagen": "https://m.media-amazon.com/images/I/71pf-PBF3BL.__AC_SX300_SY300_QL70_ML2_.jpg"
+  }
+]

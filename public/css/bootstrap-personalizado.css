@@ -1,0 +1,63 @@
+/*PALETTA DE COLORES*/
+:root {
+    --color-01: #A60505;
+    --color-02: #d40101;
+    --color-03: #0c1446;
+    --color-04:#192d96;
+    --color-05: #144d4d;
+    --color-06: #125959;
+    --color-fondo: #E7E1E1;
+    --color-blanco: #fff;
+    --color-negro: #000;
+}
+
+.bg-color-fondo{
+    background-color: var(--color-fondo);
+}
+
+.bg-input {
+    border: 1.8px solid var(--color-03);
+}
+
+.bg-input:focus {
+    border: 2px solid var(--color-03);
+    box-shadow: 0 0 0 0.2rem var(--color-03);
+}
+
+.bg-color-principal {
+    background-color: var(--color-03);
+}
+
+.bg-color-secundario {
+    background-color: var(--color-04);
+}
+
+.btn-personalized-1 {
+    background-color: var(--color-01);
+    color: var(--color-blanco);
+}
+
+.btn-personalized-1:hover {
+    background-color: var(--color-02);
+    color: var(--color-blanco);
+}
+
+.btn-personalized-2 {
+    background-color: var(--color-03);
+    color: var(--color-blanco);
+}
+
+.btn-personalized-2:hover {
+    background-color: var(--color-04);
+    color: var(--color-blanco);
+}
+
+.btn-personalized-3 {
+    background-color: var(--color-05);
+    color: var(--color-blanco);
+}
+
+.btn-personalized-3:hover {
+    background-color: var(--color-05);
+    color: var(--color-blanco);
+}
