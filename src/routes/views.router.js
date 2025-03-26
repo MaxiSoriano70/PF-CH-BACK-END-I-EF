@@ -21,6 +21,20 @@ viewsRouter.get("/", async (req, res) => {
     });
 });
 
+viewsRouter.get("/producto/:pid", async (req, res) => {
+    try {
+        const { pid } = req.params;
+        const producto = await Producto.findById(pid).lean();
+
+        if (!producto) {
+            return res.status(404).send({ status: "error", message: "Producto no encontrado." });
+        }
+
+        res.render("detalleProducto", { producto });
+    } catch (error) {
+        res.status(500).send({ status: "error", message: error.message });
+    }
+});
 
 viewsRouter.get("/realtimeproductos", async (req, res) => {
     const productos = await Producto.find().lean();
