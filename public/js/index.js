@@ -22,6 +22,8 @@ formularioAgregarProducto.addEventListener("submit", (e) => {
     }
 });
 
+
+
 socket.on("productoAgregado", (nuevoProducto) => {
     const contenedorProductos = document.getElementById("contenedorDeProductos");
 
@@ -29,7 +31,7 @@ socket.on("productoAgregado", (nuevoProducto) => {
     productoDiv.classList.add("card", "m-2", "d-flex", "flex-column");
     productoDiv.style.width = "18rem";
     productoDiv.style.minHeight = "400px";
-    productoDiv.id = `producto${nuevoProducto.id}`;
+    productoDiv.id = `producto${nuevoProducto._id}`;
 
     productoDiv.innerHTML = `
         <img src="${nuevoProducto.urlImagen}" class="card-img-top" alt="Imagen del producto" style="height: 200px; object-fit: cover;">
@@ -39,51 +41,51 @@ socket.on("productoAgregado", (nuevoProducto) => {
             <p><span>Precio:</span> ${nuevoProducto.precio}</p>
             <div class="d-flex align-items-center justify-content-center mt-auto ">
                 <button type="button" class="btn btn-personalized-2 fw-bold" id="boton-registrarse"
-                    data-bs-toggle="modal" data-bs-target="#editar${nuevoProducto.id}ProductoModal">
+                    data-bs-toggle="modal" data-bs-target="#editar${nuevoProducto._id}ProductoModal">
                     Editar
                 </button>
                 <!-- Modal Editar Producto-->
-                <section class="modal fade" id="editar${nuevoProducto.id}ProductoModal" tabindex="-1" aria-labelledby="editar${nuevoProducto.id}ProductoModal" aria-hidden="true">
+                <section class="modal fade" id="editar${nuevoProducto._id}ProductoModal" tabindex="-1" aria-labelledby="editar${nuevoProducto._id}ProductoModal" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header bg-color-principal">
-                                <h5 class="modal-title text-white" id="editar${nuevoProducto.id}ProductoModal">Editar Producto</h5>
+                                <h5 class="modal-title text-white" id="editar${nuevoProducto._id}ProductoModal">Editar Producto</h5>
                                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body bg-color-fondo">
-                                <form id="editar${nuevoProducto.id}Producto" action="http://localhost:8081/user" method="POST">
+                                <form id="editar${nuevoProducto._id}Producto" action="http://localhost:8081/user" method="POST">
                                     <div class="mb-3">
-                                        <label for="editar${nuevoProducto.id}tituloProducto" class="form-label fw-bolder">Titulo</label>
-                                        <input type="text" class="form-control bg-input" id="editar${nuevoProducto.id}tituloProducto" 
+                                        <label for="editar${nuevoProducto._id}tituloProducto" class="form-label fw-bolder">Titulo</label>
+                                        <input type="text" class="form-control bg-input" id="editar${nuevoProducto._id}tituloProducto" 
                                         placeholder="Ingrese titulo del producto" value="${nuevoProducto.titulo}" minlength="3" maxlength="25" name="titulo" required />
                                     </div>
                                     <div class="mb-3">
-                                        <label for="editar${nuevoProducto.id}descripcionProducto" class="form-label fw-bolder">Descripción producto</label>
-                                        <textarea class="form-control bg-input" id="editar${nuevoProducto.id}descripcionProducto" rows="3" placeholder="Ingrese la descripción del producto">${nuevoProducto.descripcion}</textarea>
+                                        <label for="editar${nuevoProducto._id}descripcionProducto" class="form-label fw-bolder">Descripción producto</label>
+                                        <textarea class="form-control bg-input" id="editar${nuevoProducto._id}descripcionProducto" rows="3" placeholder="Ingrese la descripción del producto">${nuevoProducto.descripcion}</textarea>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="editar${nuevoProducto.id}precioProducto" class="form-label fw-bolder">Precio</label>
-                                        <input type="number" class="form-control bg-input" id="editar${nuevoProducto.id}precioProducto" 
+                                        <label for="editar${nuevoProducto._id}precioProducto" class="form-label fw-bolder">Precio</label>
+                                        <input type="number" class="form-control bg-input" id="editar${nuevoProducto._id}precioProducto" 
                                         placeholder="Ingrese el precio" value="${nuevoProducto.precio}" min="1" name="precio" required />
                                     </div>
                                     <div class="mb-3">
-                                        <label for="editar${nuevoProducto.id}categoriaProducto" class="form-label fw-bolder">Categoria</label>
-                                        <input type="text" class="form-control bg-input" id="editar${nuevoProducto.id}categoriaProducto" 
+                                        <label for="editar${nuevoProducto._id}categoriaProducto" class="form-label fw-bolder">Categoria</label>
+                                        <input type="text" class="form-control bg-input" id="editar${nuevoProducto._id}categoriaProducto" 
                                         placeholder="Ingrese categoria del producto" value="${nuevoProducto.categoria}" minlength="3" maxlength="25" name="categoria" required />
                                     </div>
                                     <div class="mb-3">
-                                        <label for="editar${nuevoProducto.id}codigoProducto" class="form-label fw-bolder">Codigo</label>
-                                        <input type="text" class="form-control bg-input" id="editar${nuevoProducto.id}codigoProducto" 
+                                        <label for="editar${nuevoProducto._id}codigoProducto" class="form-label fw-bolder">Codigo</label>
+                                        <input type="text" class="form-control bg-input" id="editar${nuevoProducto._id}codigoProducto" 
                                         placeholder="Ingrese codigo del producto" value="${nuevoProducto.codigo}" minlength="3" maxlength="25" name="codigo" required />
                                     </div>
                                     <div class="mb-3">
-                                        <label for="editar${nuevoProducto.id}stockProducto" class="form-label fw-bolder">Stock</label>
-                                        <input type="number" class="form-control bg-input" id="editar${nuevoProducto.id}stockProducto" 
+                                        <label for="editar${nuevoProducto._id}stockProducto" class="form-label fw-bolder">Stock</label>
+                                        <input type="number" class="form-control bg-input" id="editar${nuevoProducto._id}stockProducto" 
                                         placeholder="Ingrese el stock" value="${nuevoProducto.stock}" min="1" name="stock" required />
                                     </div>
                                     <div class="mb-3">
-                                        <label for="editar${nuevoProducto.id}urlImagenProducto" class="form-label fw-bolder">Url Imagen</label>
-                                        <input type="text" class="form-control bg-input" id="editar${nuevoProducto.id}urlImagenProducto" 
+                                        <label for="editar${nuevoProducto._id}urlImagenProducto" class="form-label fw-bolder">Url Imagen</label>
+                                        <input type="text" class="form-control bg-input" id="editar${nuevoProducto._id}urlImagenProducto" 
                                         placeholder="Ingrese la URL Imagen" value="${nuevoProducto.urlImagen}" minlength="3" name="urlImagen" required />
                                     </div>
                                     <div class="d-flex align-items-center justify-content-center">
@@ -95,7 +97,7 @@ socket.on("productoAgregado", (nuevoProducto) => {
                         </div>
                     </div>
                 </section>
-                <button class="btn btn-personalized-1 m-1 fw-bold" onclick="eliminarProducto(${nuevoProducto.id})">Eliminar</button>
+                <button class="btn btn-personalized-1 m-1 fw-bold" onclick="eliminarProducto('${nuevoProducto._id}')">Eliminar</button>
             </div>
         </div>
     `;
@@ -115,19 +117,16 @@ function eliminarProducto(productId) {
         cancelButtonText: "Cancelar",
     }).then((result) => {
         if (result.isConfirmed) {
+            // Enviamos la solicitud de eliminación al servidor.
             socket.emit("eliminarProducto", productId);
+
+            // Mostramos la alerta de éxito al usuario que inició la acción.
+            Swal.fire("Eliminado", "El producto ha sido eliminado.", "success");
         }
     });
 }
 
-socket.on("productoEliminado", (productoId) => {
-    const productoElement = document.getElementById(`producto${productoId}`);
-    if (productoElement) {
-        productoElement.remove();
-        Swal.fire("Eliminado", "El producto ha sido eliminado.", "success");
-    }
-});
-
+// Escuchamos el evento `productoRemovido` que emite el servidor a todos los clientes.
 socket.on("productoRemovido", (productoId) => {
     const productoElement = document.getElementById(`producto${productoId}`);
     if (productoElement) {

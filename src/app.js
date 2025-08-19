@@ -35,8 +35,9 @@ app.use("/", viewsRouter);
 
 /* Web Socket */
 io.on("connection", (socket) => {
-    console.log("Nuevo usuario conectado");
+    console.log("Nuevo usuario conectado con ID:", socket.id);
 
+    // Listener para cuando un cliente agrega un nuevo producto
     socket.on("nuevoProducto", async(productoDatos) => {
         try {
             console.log("Producto recibido en el servidor:", productoDatos);
@@ -50,16 +51,20 @@ io.on("connection", (socket) => {
                 categoria: productoDatos["categoria"],
                 urlImagen: productoDatos["urlImagen"]
             });
+
             const response = await nuevoProducto.save();
-            console.log(response);
-            io.emit("productoAgregado", nuevoProducto);
+            console.log("Producto guardado, emitiendo a todos los clientes:", response);
+
+            io.emit("productoAgregado", response);
+
         } catch (error) {
-            console.error("Error al agregar producto");
+            console.error("Error al agregar producto:", error.message);
+
+            socket.emit("errorProducto", "No se pudo agregar el producto.");
         }
     });
-});
 
-io.on("connection", (socket) => {
+
     socket.on("eliminarProducto", async (productoId) => {
         try {
             const response = await Producto.findByIdAndDelete(productoId);
@@ -67,17 +72,15 @@ io.on("connection", (socket) => {
                 return socket.emit("errorProducto", "Producto no encontrado.");
             }
 
-            // Notificar al usuario que eliminó el producto
-            socket.emit("productoEliminado", productoId);
-
-            // Notificar a los demás usuarios que el producto fue eliminado
-            socket.broadcast.emit("productoRemovido", productoId);
+            io.emit("productoRemovido", productoId);
 
         } catch (error) {
-            console.error("Error en el servidor al eliminar producto", error);
+            console.error("Error en el servidor al eliminar producto:", error);
             socket.emit("errorProducto", "Hubo un error al eliminar el producto.");
         }
     });
+
+    // Aquí podrías agregar más listeners como "editarProducto", etc.
 });
 
 
