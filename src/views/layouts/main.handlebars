@@ -16,7 +16,7 @@
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-color-principal p-md-2 p-lg-3">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold" href="./index.html"><i class="fa-solid fa-fire-flame-curved"></i> Movie Fire</a>
+                <a class="navbar-brand fw-bold" href="./"><i class="fa-solid fa-fire-flame-curved"></i> Websocket</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarMovies"
                 aria-controls="navBarMovies" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -24,52 +24,13 @@
                 <div class="collapse navbar-collapse" id="navBarMovies">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
                     <li class="nav-item mx-2">
-                    <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                    <a class="nav-link" href="./pages/contacto.html">Contacto</a>
-                    </li>
-                    <li class="nav-item mx-2">
-                    <a class="nav-link" href="pages/acercaDeNosotros.html">Acerca de Nosotros</a>
+                    <a class="nav-link active" aria-current="page" href="./">Inicio</a>
                     </li>
 
-                    <li class="nav-item dropdown mx-2" id="opciones-usuario">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <i class="fa-solid fa-user"></i>
-                        <span id="nombre-usuario"></span>
+                    <li class="nav-item mx-2 mb-2">
+                    <a href="/realtimeproductos" class="btn btn-personalized-3 fw-bold" id="boton-iniciar-sesion">
+                        ADM. Productos
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark bg-color-secundario mb-2">
-                        <li>
-                        <a class="dropdown-item text-light fw-bold" href="#" data-bs-toggle="modal"
-                            data-bs-target="#editarPerfilModal"><i class="fa-solid fa-user-pen"></i> Editar perfil</a>
-                        </li>
-                        <li>
-                        <a class="dropdown-item text-light fw-bold" id="btnAdministracion" href="pages/administracion.html"><i
-                            class="fa-solid fa-user-tie"></i> Administrar</a>
-                        </li>
-                        <li>
-                        <hr class="dropdown-divider bg-light" />
-                        </li>
-                        <li>
-                        <a class="dropdown-item text-light fw-bold" id="btnCerrarSesion" href="#"><i
-                            class="fa-solid fa-door-open"></i> Salir</a>
-                        </li>
-                    </ul>
-                    </li>
-                    <li class="nav-item mx-2 mb-2">
-                    <!-- Button modal Iniciar Sesión-->
-                    <button type="button" class="btn btn-personalized-3 fw-bold" id="boton-iniciar-sesion"
-                        data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">
-                        Iniciar Sesión
-                    </button>
-                    </li>
-                    <li class="nav-item mx-2 mb-2">
-                        <button type="button" class="btn btn-personalized-3 fw-bold" id="boton-registrarse"
-                        data-bs-toggle="modal" data-bs-target="#registrarseModal">
-                        Registrarse
-                        </button>
-                    </li>
                 </ul>
                 </div>
             </div>
